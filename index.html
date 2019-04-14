@@ -1,34 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
     <title>reveal.js</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reset.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/simple.min.css"
+    />
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/css/monokai.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/tomorrow-night.min.css"
+    />
 
     <!-- Printing and PDF exports -->
     <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi )
-        ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/print/pdf.min.css'
-        : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/print/paper.min.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      const cdnBase = "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/";
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? cdnBase + "css/print/pdf.min.css"
+        : cdnBase + "css/print/paper.min.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
     </script>
+
+    <style>
+      /* required by reveal-code-focus */
+      .line { display: block; }
+      .line.focus { background-color: #373b41; }
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>Slide 1</section>
-        <section>Slide 2</section>
+        <section
+          data-markdown="./index.markdown"
+          data-separator="^\n\n\n"
+          data-separator-vertical="^\n\n"
+          data-separator-notes="^Note:"
+          data-charset="utf8"
+        >
+          <!--
+            Note that Windows uses `\r\n` instead of `\n` as its linefeed character.
+            For a regex that supports all operating systems, use `\r?\n` instead of `\n`.
+          -->
+        </section>
       </div>
     </div>
 
@@ -38,14 +70,29 @@
       // More info about config & dependencies:
       // - https://github.com/hakimel/reveal.js#configuration
       // - https://github.com/hakimel/reveal.js#dependencies
-      const cdnBase = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/';
       const plugins = [
-        { src: 'plugin/markdown/marked.js' },
-        { src: 'plugin/markdown/markdown.js' },
-        { src: 'plugin/highlight/highlight.js', async: true }
+        {
+          src: "plugin/markdown/marked.js",
+          condition: () => !!document.querySelector("[data-markdown]")
+        },
+        {
+          src: "plugin/markdown/markdown.js",
+          condition: () => !!document.querySelector("[data-markdown]")
+        },
+        { src: "plugin/highlight/highlight.js", async: true },
+        {
+          src: "https://unpkg.com/reveal-code-focus@1.1.0/reveal-code-focus.js",
+          callback: () => RevealCodeFocus(),
+          async: true
+        },
+        { src: "plugin/zoom-js/zoom.js", async: true }
       ];
       Reveal.initialize({
-        dependencies: plugins.map(p => ({ ...p, src: cdnBase + p.src }))
+        hash: true,
+        dependencies: plugins.map(p => ({
+          ...p,
+          src: p.src.startsWith("http") ? p.src : cdnBase + p.src
+        }))
       });
     </script>
   </body>
