@@ -26,17 +26,37 @@ April 17, 2019
 
 ---
 
-
+<!-- .slide: data-transition="none" -->
 ```ts
-type Id<T> = T
-
-function id<T>(x: Id<T>): T {
-  return x
+function matchBoolean(x: boolean): string {
+  switch(x) {
+    case true:
+      return "got true"
+    case false:
+      return "got false"
+    default:
+      return "what did we get?"
+  }
 }
-
-const id2 = x => x
 ```
 
-. <!-- .element: class="fragment" data-code-focus="1" style="display:none" -->
+. <!-- .element: class="fragment" data-code-focus="8" style="display:none" -->
 
-. <!-- .element: class="fragment" data-code-focus="1,4-5" style="display:none" -->
+--
+
+<!-- .slide: data-transition="none" -->
+```ts
+function matchBoolean(x: boolean): string {
+  switch(x) {
+    case true:
+      return "got true"
+    case false:
+      return "got false"
+    default:
+      x.someProp // ✘ 'someProp' does not exist on type 'never'.
+      return "what did we get?"
+  }
+}
+```
+
+. <!-- .element: class="fragment" data-code-focus="8" style="display:none" -->
