@@ -41,8 +41,13 @@ April 17, 2019
 
 ---
 
-<!-- .slide: class="noborder" -->
+<!-- .slide: class="noborder" data-transition="none" -->
 ![empty intersection](./empty-intersection.svg)
+
+--
+
+<!-- .slide: class="noborder" data-transition="none" -->
+![empty intersection is never](./empty-intersection-is-never.svg)
 
 ---
 

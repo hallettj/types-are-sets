@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="empty-intersection.svg">
+   sodipodi:docname="empty-intersection-is-never.svg">
   <defs
      id="defs2">
     <marker
@@ -218,5 +218,16 @@
          x="215.97864"
          y="119.86904"
          style="stroke-width:0.26458332">string &amp; number</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="232.90764"
+       y="143.92606"
+       id="text1953"><tspan
+         sodipodi:role="line"
+         id="tspan1951"
+         x="232.90764"
+         y="143.92606"
+         style="stroke-width:0.26458332">= never</tspan></text>
   </g>
 </svg>
