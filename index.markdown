@@ -53,6 +53,11 @@ TypeScript, NYC - April 17, 2019
 
 ---
 
+<!-- .slide: class="noborder" -->
+![never fits in every other set](./never-is-everywhere.svg)
+
+---
+
 <!-- .slide: data-transition="none" -->
 ```ts
 function matchBoolean(x: boolean): string {
@@ -87,3 +92,8 @@ function matchBoolean(x: boolean): string {
 ```
 
 . <!-- .element: class="fragment" data-code-focus="8" style="display:none" -->
+
+---
+
+<!-- .slide: class="noborder" -->
+![all the types](./all-the-types.svg)
