@@ -4,10 +4,27 @@ Jesse Hallett &lt;jesse@sitr.us&gt;
 
 April 17, 2019
 
+---
 
+<!-- .slide: class="noborder" -->
+![a portion of the interface hierarchy in Immutable.js](./interface-hierarchy.svg)
 
-# What are types?
+---
 
+<!-- .slide: class="noborder" -->
+![Immutable.js interfaces represented as nested sets](./interface-hierarchy-as-sets.svg)
+
+---
+
+<!-- .slide: class="noborder" data-transition="none" -->
+![List and Seq, a pair of disjoint types](./list-and-seq.svg)
+
+--
+
+<!-- .slide: class="noborder" data-transition="none" -->
+![List and Seq, a pair of disjoint types](./list-union-seq.svg)
+
+---
 
 
 ```ts
