@@ -96,4 +96,9 @@ function matchBoolean(x: boolean): string {
 ---
 
 <!-- .slide: class="noborder" -->
+![never is identity wrt union](./union-with-never.svg)
+
+---
+
+<!-- .slide: class="noborder" -->
 ![all the types](./all-the-types.svg)
