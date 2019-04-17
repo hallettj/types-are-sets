@@ -41,6 +41,11 @@ April 17, 2019
 
 ---
 
+<!-- .slide: class="noborder" -->
+![empty intersection](./empty-intersection.svg)
+
+---
+
 <!-- .slide: data-transition="none" -->
 ```ts
 function matchBoolean(x: boolean): string {
