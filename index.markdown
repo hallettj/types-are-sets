@@ -31,6 +31,16 @@ April 17, 2019
 
 ---
 
+<!-- .slide: class="noborder" data-transition="none" -->
+![unit types in string, number, and boolean](./unit-types.svg)
+
+--
+
+<!-- .slide: class="noborder" data-transition="none" -->
+![null and undefined are unit types](./all-unit-types.svg)
+
+---
+
 <!-- .slide: data-transition="none" -->
 ```ts
 function matchBoolean(x: boolean): string {
