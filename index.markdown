@@ -100,5 +100,30 @@ function matchBoolean(x: boolean): string {
 
 ---
 
+```ts
+function timeout(ms: number): Promise<never> {
+  return new Promise((_, reject) =>
+    setTimeout(() => reject(new Error("Timeout elapsed")), ms)
+  )
+}
+```
+
+---
+
+```ts
+async function fetchPriceWithTimeout(
+  tickerSymbol: string
+): Promise<number> {
+  const stock = await Promise.race([
+    fetchStock(tickerSymbol), // `Promise<{ price: number }>`
+    timeout(3000)             // `Promise<never>`
+  ])
+  return stock.price // { price: number } | never
+                     //   => { price: number }
+}
+```
+
+---
+
 <!-- .slide: class="noborder" -->
 ![all the types](./all-the-types.svg)
