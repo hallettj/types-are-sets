@@ -1,8 +1,10 @@
-# Thinking of Types as Sets of Values
+# Types Are Sets
 
 Jesse Hallett &lt;jesse@sitr.us&gt;
 
-April 17, 2019
+Sr Software Engineer at Originate, Inc.
+
+TypeScript, NYC - April 17, 2019
 
 ---
 
