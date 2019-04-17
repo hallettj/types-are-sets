@@ -22,7 +22,12 @@ April 17, 2019
 --
 
 <!-- .slide: class="noborder" data-transition="none" -->
-![List and Seq, a pair of disjoint types](./list-union-seq.svg)
+![union of List and Seq](./list-union-seq.svg)
+
+---
+
+<!-- .slide: class="noborder" -->
+![an intersection type that contains sized collections](./collection-intersect-size.svg)
 
 ---
 
